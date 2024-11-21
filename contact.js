@@ -1,8 +1,8 @@
-// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
-    const contactForm = document.getElementById('contact-form');
+    const contactForm = document.getElementById('contactForm'); // Updated to match your HTML form ID
+    const thankYouMessage = document.getElementById('thankYouMessage');
 
     // Auto-fill fields if data exists in localStorage
     nameField.value = localStorage.getItem('name') || '';
@@ -33,22 +33,27 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('name', nameField.value);
             localStorage.setItem('email', emailField.value);
 
-            // Show success alert and reset form
-            alert('Your message has been submitted successfully! Thank you for contacting me.');
-            contactForm.reset();
+            // Send form data to Formspree using Fetch API
+            const formData = new FormData(contactForm);
+            fetch(contactForm.action, {
+                method: contactForm.method,
+                body: formData,
+            })
+            .then(response => {
+                if (response.ok) {
+                    // If successful, hide form and show thank-you message
+                    contactForm.style.display = 'none';
+                    thankYouMessage.style.display = 'block';
+                } else {
+                    alert('There was an issue with your submission. Please try again.');
+                }
+            })
+            .catch(() => {
+                alert('There was an issue with your submission. Please try again.');
+            });
+
         } else {
             alert('Please fill in all required fields marked with a star.');
         }
     });
-});
-
-// Handle thank-you message display
-const form = document.getElementById('contactForm');
-const thankYouMessage = document.getElementById('thankYouMessage');
-
-form.addEventListener('submit', event => {
-    event.preventDefault(); // Prevent default submission
-
-    form.style.display = 'none'; // Hide form
-    thankYouMessage.style.display = 'block'; // Show thank-you message
 });
