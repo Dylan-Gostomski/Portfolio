@@ -1,406 +1,273 @@
-/* Universal Styles */
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f9f9f9;
-    margin-top: 60px; /* Prevent content from being hidden behind the fixed header */
-    min-height: 100vh; /* Ensure the body takes at least the full height of the viewport */
-    display: flex;
-    flex-direction: column;
-}
-
-/* Header Styling */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: linear-gradient(to right, #4a90e2, #50e3c2);
-    padding: 10px 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
-    color: white;
-}
-
-header h1 {
-    font-size: 2.5rem;
-    font-family: 'Roboto', sans-serif;
-    letter-spacing: 2px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease-in-out;
-}
-
-header h1:hover {
-    transform: scale(1.1);
-}
-
-header nav ul {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-header nav ul li {
-    display: inline;
-}
-
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    padding: 5px 10px;
-    border-radius: 3px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-header nav ul li a:hover {
-    background-color: #555;
-    color: #fff;
-}
-
-/* Portfolio Page Styling */
-#portfolio {
-    padding-left: 40px;
-    padding-top: 10px;
-}
-
-.portfolio-category {
-    margin-bottom: 50px;
-}
-
-.portfolio-category h3 {
-    color: #333;
-    font-size: 1.8rem;
-    margin-bottom: 20px;
-}
-
-.portfolio-item {
-    margin: 15px 0;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.portfolio-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
-
-.portfolio-item h4 {
-    font-size: 1.5rem;
-    color: #4a90e2;
-    margin-bottom: 10px;
-}
-
-.portfolio-item p {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.portfolio-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, opacity 0.3s;
-}
-
-.portfolio-item img:hover {
-    transform: scale(1.05);
-    opacity: 0.9;
-}
-
-/* Contact Page Styles */
-#contact {
-    padding: 100px 40px;
-    background-color: #f9f9f9;
-    margin-top: -75px;
-}
-
-#contact h1 {
-    font-size: 2.5rem;
-    color: #4a90e2;
-    margin-bottom: 20px;
-    padding-left: 10px;
-}
-
-#contact p {
-    font-size: 1.2rem;
-    color: #333;
-    margin-bottom: 30px;
-    padding-left: 10px;
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    background: #fff;
-    padding: 20px 40px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: calc(100% - 20px);
-    margin: 0 auto;
-    box-sizing: border-box;
-}
-
-form label {
-    margin: 10px 0 5px;
-}
-
-form input,
-form textarea {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1rem;
-    color: #333;
-    outline: none;
-    transition: border-color 0.3s;
-    width: 100%;
-    font-family: 'Poppins', sans-serif;
-}
-
-form input:focus,
-form textarea:focus {
-    border-color: #4a90e2;
-}
-
-form input:invalid,
-form textarea:invalid {
-    border-color: #e74c3c;
-}
-
-form input::placeholder,
-form textarea::placeholder {
-    color: rgba(0, 0, 0, 0.5);
-    font-style: italic;
-}
-
-form button {
-    padding: 15px 20px;
-    background: #4a90e2;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    font-family: 'Poppins', sans-serif; 
-}
-
-form button:hover {
-    background: #50e3c2;
-}
-
-/* Thank You Message */
-#thankYouMessage {
-    display: none;
-    background-color: #f9f9f9;
-    color: #4a90e2;
-    padding: 50px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    font-size: 2rem;
-    width: 100%;
-    max-width: 600px;
-    margin: 100px auto;
-    animation: fadeIn 1s ease-out forwards;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-50px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Footer Styling */
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-    margin-top: auto;
-}
-
-footer p {
-    font-size: 1rem;
-    margin: 0;
-}
-
-footer a {
-    text-decoration: none;
-    color: #4a90e2;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-footer a:hover {
-    color: #50e3c2;
-}
-
-/* Universal Responsive Adjustments */
-@media (max-width: 1024px) {
-    header h1 {
-        font-size: 2rem;
+    * {
+        box-sizing: border-box;
     }
 
-    header nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-    }
-
-    header nav ul li a {
-        font-size: 1rem;
-    }
-
-    #portfolio {
-        padding-left: 20px;
-        padding-top: 10px;
-    }
-
-    .portfolio-item {
-        margin: 10px 0;
-    }
-
-    form {
-        padding: 20px 15px;
-    }
-
-    #thankYouMessage {
-        font-size: 1.8rem;
-        padding: 40px;
-    }
-}
-
-@media (max-width: 768px) {
-    /* Portfolio Page Adjustments */
-    #portfolio {
-        padding-left: 10px;
-        padding-top: 10px;
-    }
-
-    .portfolio-category h3 {
-        font-size: 1.6rem;
-    }
-
-    .portfolio-item {
+    body {
+        font-family: 'Poppins', sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        margin-top: 60px; 
+        min-height: 100vh;
+        display: flex;
         flex-direction: column;
     }
 
-    .portfolio-item img {
-        max-width: 100%;
-        height: auto;
-    }
-
-    /* Contact Form Adjustments */
-    #contact {
-        padding: 40px 15px;
-    }
-
-    form {
-        width: 90%;
-        padding: 15px;
-    }
-
-    form button {
-        font-size: 1rem;
-        padding: 10px 15px;
-    }
-
-    /* Thank You Message */
-    #thankYouMessage {
-        font-size: 1.5rem;
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Header Adjustments */
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    header nav ul {
-        text-align: center;
-        gap: 10px;
-    }
-
-    header nav ul li a {
-        font-size: 0.9rem;
-        padding: 8px;
-    }
-
-    /* Portfolio Adjustments */
-    .portfolio-category h3 {
-        font-size: 1.4rem;
-        margin-bottom: 10px;
-    }
-
-    .portfolio-item {
-        margin: 8px 0;
-    }
-
-    .portfolio-item h4 {
-        font-size: 1.2rem;
-    }
-
-    .portfolio-item p {
-        font-size: 1rem;
-    }
-
-    .portfolio-item img {
+    /* Header Styling */
+    header {
+        position: fixed;
+        top: 0;
         width: 100%;
-        height: auto;
+        background: linear-gradient(to right, #4a90e2, #50e3c2);
+        padding: 10px 20px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        color: white;
     }
 
-    /* Contact Section */
+    header h1 {
+        font-size: 2.5rem;
+        font-family: 'Roboto', sans-serif;
+        letter-spacing: 2px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    header h1:hover {
+        transform: scale(1.1);
+    }
+
+    header nav ul {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    header nav ul li {
+        display: inline;
+        position: relative;
+        z-index: 10;
+    }
+
+    header nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 14px;
+        padding: 5px 10px;
+        border-radius: 3px;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    header nav ul li a:hover {
+        background-color: #555;
+        color: #fff;
+    }
+
+    /* Contact Page Styling */
+    #contact {
+        padding: 100px 40px;
+        background-color: #f9f9f9;
+        margin-top: -75px;
+    }
+
     #contact h1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
+        color: #4a90e2;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        text-align: center;
     }
 
     #contact p {
-        font-size: 1rem;
+        font-size: 1.2rem;
+        color: #333;
+        margin-bottom: 30px;
+        padding-left: 10px;
+        text-align: center;
     }
 
+    /* Form Styling */
     form {
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        background: #fff;
+        padding: 20px 40px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         width: 100%;
+        max-width: calc(100% - 20px);
+        margin: 0 auto;
+        box-sizing: border-box;
+    }
+
+    form label {
+        margin: 10px 0 5px;
+    }
+
+    form input,
+    form textarea {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-size: 1rem;
+        color: #333;
+        outline: none;
+        transition: border-color 0.3s;
+        width: 100%;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    form input:focus,
+    form textarea:focus {
+        border-color: #4a90e2;
+    }
+
+    form input:invalid,
+    form textarea:invalid {
+        border-color: #e74c3c;
+    }
+
+    form input::placeholder,
+    form textarea::placeholder {
+        color: rgba(0, 0, 0, 0.5);
+        font-style: italic;
     }
 
     form button {
-        font-size: 0.9rem;
-        padding: 8px 10px;
+        padding: 15px 20px;
+        background: #4a90e2;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 1.1rem;
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        font-family: 'Poppins', sans-serif;
+    }
+
+    form button:hover {
+        background: #50e3c2;
     }
 
     /* Thank You Message */
     #thankYouMessage {
-        font-size: 1.2rem;
-        padding: 15px;
+        display: none;
+        background-color: #f9f9f9;
+        color: #4a90e2;
+        padding: 50px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-size: 2rem;
+        width: 100%;
+        max-width: 600px;
+        margin: 100px auto;
+        animation: fadeIn 1s ease-out forwards;
     }
 
-    /* Footer Adjustments */
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(-50px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    /* Footer Styling */
+    footer {
+        background-color: #333;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+        margin-top: auto;
+    }
+
     footer p {
-        font-size: 0.9rem;
+        font-size: 1rem;
+        margin: 0;
     }
 
     footer a {
-        font-size: 0.9rem;
+        text-decoration: none;
+        color: #4a90e2;
+        font-weight: bold;
+        transition: color 0.3s;
     }
-}
+
+    footer a:hover {
+        color: #50e3c2;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 768px) {
+        header nav ul {
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 60px 20px;
+        }
+
+        #contact h1 {
+            font-size: 2rem;
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        /* Form Styling */
+        form {
+            padding: 15px;
+            max-width: 100%;
+        }
+
+        form label {
+            font-size: 1rem;
+        }
+
+        form input,
+        form textarea {
+            font-size: 1rem;
+        }
+
+        form button {
+            font-size: 1rem;
+            padding: 12px 18px;
+        }
+
+        /* Thank You Message */
+        #thankYouMessage {
+            font-size: 1.5rem;
+            padding: 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        #contact h1 {
+            font-size: 1.8rem;
+        }
+
+        #contact p {
+            font-size: 1rem;
+        }
+
+        form button {
+            padding: 10px 15px;
+            font-size: 1rem;
+        }
+    }
