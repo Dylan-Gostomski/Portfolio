@@ -254,27 +254,153 @@ footer a:hover {
     color: #50e3c2;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    #contact {
-        padding: 60px 20px;
-    }
-
-    form {
-        padding: 15px;
+/* Universal Responsive Adjustments */
+@media (max-width: 1024px) {
+    header h1 {
+        font-size: 2rem;
     }
 
     header nav ul {
         flex-direction: column;
-        gap: 15px;
+        align-items: center;
+        gap: 10px;
     }
 
-    footer p {
-        font-size: 1.1rem;
+    header nav ul li a {
+        font-size: 1rem;
+    }
+
+    #portfolio {
+        padding-left: 20px;
+        padding-top: 10px;
+    }
+
+    .portfolio-item {
+        margin: 10px 0;
+    }
+
+    form {
+        padding: 20px 15px;
     }
 
     #thankYouMessage {
+        font-size: 1.8rem;
+        padding: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* Portfolio Page Adjustments */
+    #portfolio {
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+
+    .portfolio-category h3 {
+        font-size: 1.6rem;
+    }
+
+    .portfolio-item {
+        flex-direction: column;
+    }
+
+    .portfolio-item img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Contact Form Adjustments */
+    #contact {
+        padding: 40px 15px;
+    }
+
+    form {
+        width: 90%;
+        padding: 15px;
+    }
+
+    form button {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+
+    /* Thank You Message */
+    #thankYouMessage {
         font-size: 1.5rem;
-        padding: 30px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Header Adjustments */
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    header nav ul {
+        text-align: center;
+        gap: 10px;
+    }
+
+    header nav ul li a {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    /* Portfolio Adjustments */
+    .portfolio-category h3 {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+
+    .portfolio-item {
+        margin: 8px 0;
+    }
+
+    .portfolio-item h4 {
+        font-size: 1.2rem;
+    }
+
+    .portfolio-item p {
+        font-size: 1rem;
+    }
+
+    .portfolio-item img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Contact Section */
+    #contact h1 {
+        font-size: 2rem;
+    }
+
+    #contact p {
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 10px;
+        width: 100%;
+    }
+
+    form button {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+
+    /* Thank You Message */
+    #thankYouMessage {
+        font-size: 1.2rem;
+        padding: 15px;
+    }
+
+    /* Footer Adjustments */
+    footer p {
+        font-size: 0.9rem;
+    }
+
+    footer a {
+        font-size: 0.9rem;
     }
 }
