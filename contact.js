@@ -1,4 +1,3 @@
-// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
@@ -43,16 +42,17 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
-                    contactForm.style.display = 'none';
-                    thankYouMessage.style.display = 'block';
-                    contactForm.reset(); // Reset the form after submission
+                    console.log('Form submitted successfully!');  // Debugging log
+                    contactForm.style.display = 'none';  // Hide form
+                    thankYouMessage.style.display = 'block';  // Show thank you message
+                    contactForm.reset();  // Reset the form after submission
                 } else {
-                    console.error('Form submission failed:', response.statusText);
+                    console.error('Form submission failed:', response.statusText);  // Log detailed error
                     alert('There was an issue with your submission. Please try again.');
                 }
             })
             .catch(error => {
-                console.error(error);
+                console.error(error);  // Log any network or other issues
                 alert('There was an issue with your submission. Please try again.');
             });
         } else {
