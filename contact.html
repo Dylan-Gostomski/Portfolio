@@ -1,54 +1,54 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Me</title>
-    <link rel="stylesheet" href="contact.css"> <!-- Link to portfolio-specific styles if needed -->
-</head>
-<body>
-    <!-- Header Section -->
-    <header>
-        <nav>
-            <ul>
-                <li><a href="index.html">About</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html">Contact Me</a></li>
-            </ul>
-        </nav>
-    </header>
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contact Me</title>
+        <link rel="stylesheet" href="resources/contact.css">
+    </head>
+    <body>
+        <!-- Header Section -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
 
-    <!-- Contact Section -->
-    <section id="contact">
-        <h1>Contact Me!</h1>
-        <p>Feel free to reach out with any questions or inquiries. I'd love to connect!</p>
-        
-        <!-- Contact Form -->
-        <form id="contactForm" action="https://formspree.io/f/mnnqzlkw" method="POST">
-            <label for="name">Name <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Required Field">
-        
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="example@email.com">
-        
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" required placeholder="Enter text"></textarea>
-        
-            <button type="submit">Submit</button>
-        </form>
-        
-        <!-- Thank You Message (Initially Hidden) -->
-        <div id="thankYouMessage" style="display: none;">
-            <h2>Thank you for reaching out!</h2>
-            <p>I will be in contact with you soon.</p>
-        </div>
-    </section>
+        <!-- Contact Section -->
+        <section id="contact">
+            <h1>Contact Me!</h1>
+            <p>Feel free to reach out with any questions or inquiries. I'd love to connect!</p>
+            
+            <!-- Contact Form -->
+            <form id="contactForm" action="https://formspree.io/f/mnnqzlkw" method="POST">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Required Field">
+            
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" required placeholder="Enter text"></textarea>
+            
+                <button type="submit">Submit</button>
+            </form>
+            
+            <!-- Thank You Message (Initially Hidden) -->
+            <div id="thankYouMessage" style="display: none;">
+                <h2>Thank you for reaching out!</h2>
+                <p>I will be in contact with you soon.</p>
+            </div>
+        </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>© 2024 Dylan Gostomski | All rights reserved</p>
-    </footer>
+        <!-- Footer Section -->
+        <footer>
+            <p>© 2024 Dylan Gostomski | All rights reserved</p>
+        </footer>
 
-    <script src="contact.js"></script>
-</body>
-</html>
+        <script src="resources/contact.js"></script>
+    </body>
+    </html>
