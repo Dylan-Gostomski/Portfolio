@@ -236,7 +236,7 @@
 
     @media (max-width: 480px) {
         header nav ul {
-            flex-direction: column;
+            flex-direction: row;
             gap: 15px;
             text-align: center;
         }
