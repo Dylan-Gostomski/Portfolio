@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailField = document.getElementById('email');
     const contactForm = document.getElementById('contactForm');
     const thankYouMessage = document.getElementById('thankYouMessage');
-    
+
     // Auto-fill fields if data exists in localStorage
     nameField.value = localStorage.getItem('name') || '';
     emailField.value = localStorage.getItem('email') || '';
@@ -13,17 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', event => {
         event.preventDefault(); // Prevent default form submission
 
-        // Validate required fields
         let isValid = true;
+
+        // Validate required fields
         document.querySelectorAll('input[required], textarea[required]').forEach(field => {
-            const star = field.nextElementSibling; // Locate the star element
+            const star = field.nextElementSibling;
             if (field.value.trim() === '') {
-                // Highlight empty fields
                 field.style.borderColor = '#e74c3c';
                 if (star) star.style.color = '#e74c3c';
                 isValid = false;
             } else {
-                // Reset styles for filled fields
                 field.style.borderColor = '#ddd';
                 if (star) star.style.color = '';
             }
@@ -44,17 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => {
                 if (response.ok) {
-                    console.log('Form submitted successfully!');  // Debugging log
-                    // Hide form and show thank-you message
                     contactForm.style.display = 'none';
                     thankYouMessage.style.display = 'block';
+                    contactForm.reset(); // Reset the form after submission
                 } else {
-                    console.error('Form submission failed.');  // Debugging log
+                    console.error('Form submission failed:', response.statusText);
                     alert('There was an issue with your submission. Please try again.');
                 }
             })
             .catch(error => {
-                console.error(error); // Log any network or other issues
+                console.error(error);
                 alert('There was an issue with your submission. Please try again.');
             });
         } else {
