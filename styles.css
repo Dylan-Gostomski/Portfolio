@@ -326,31 +326,48 @@ html {
 
 /* Media Queries for Mobile Phones (Small Screens) */
 @media (max-width: 768px) {
+    /* Hide all sections except About, Portfolio, and Contact */
+    #learning, #experience, #education, #skills, #images {
+        display: none;
+    }
+
+    /* Ensure the About, Portfolio, and Contact sections are inline */
+    #about, #portfolio, #contact {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px;
+    }
+
+    /* Make sure the text and image in the About section stay inline */
+    #about {
+        flex-direction: row; /* Keep the About section inline */
+    }
+
+    .about-text, .about-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .about-text {
+        margin-bottom: 0;
+    }
+
+    /* Adjust the Portfolio button */
+    .portfolio-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+
+    /* Ensure all navigation items are centered and fit well on small screens */
     header nav ul {
         flex-direction: column;
         gap: 15px;
+        text-align: center;
     }
 
     header nav ul li a {
         font-size: 1rem;
         padding: 10px 0;
-    }
-
-    #about {
-        padding: 20px;
-    }
-
-    .image-gallery img {
-        width: 100%;
-    }
-
-    section {
-        margin: 10px 5px;
-    }
-
-    .portfolio-btn {
-        font-size: 0.9rem;
-        padding: 8px 16px;
     }
 }
 
@@ -358,11 +375,6 @@ html {
 @media (max-width: 480px) {
     header h1 {
         font-size: 1.2rem;
-    }
-
-    nav ul {
-        text-align: center;
-        padding: 0;
     }
 
     .portfolio-btn {
@@ -374,12 +386,22 @@ html {
         max-width: 90%;
     }
 
-    .image-gallery {
-        flex-direction: column;
-    }
-
     footer p {
         font-size: 0.8rem;
     }
-}
 
+    /* Adjust layout for the About, Portfolio, and Contact sections */
+    #about, #portfolio, #contact {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text, .about-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .portfolio-btn {
+        margin-top: 10px;
+    }
+}
