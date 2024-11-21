@@ -24,20 +24,18 @@
         <p>Feel free to reach out with any questions or inquiries. I'd love to connect!</p>
         
         <!-- Contact Form -->
-        <form id="contactForm" name="contact" method="POST" data-netlify="true" onSubmit="submit">
-            <input type="hidden" name="form-name" value="contact" />
-
-            <label for="name">Name <span class="required">*</span></label>
-            <input type="text" id="name" name="name" required placeholder="Required Field">
-
-            <label for="email">Email <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="example@email.com">
-
-            <label for="message">Message <span class="required">*</span></label>
-            <textarea id="message" name="message" required placeholder="Enter text"></textarea>
-
-            <button type="submit">Submit</button>
-        </form>
+        <form id="contactForm" action="https://formsubmit.co/dylangostomski01@gmail.com" method="POST">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" name="name" required placeholder="Required Field">
+            
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" required placeholder="example@email.com">
+            
+                <label for="message">Message <span class="required">*</span></label>
+                <textarea id="message" name="message" required placeholder="Enter text"></textarea>
+            
+                <button type="submit">Submit</button>
+            </form>
         
         <!-- Thank You Message (Initially Hidden) -->
         <div id="thankYouMessage" style="display: none;">
