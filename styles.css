@@ -178,58 +178,6 @@ footer p {
     margin: 0;
 }
 
-/* Media Queries for Mobile Responsiveness */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2rem;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    nav ul {
-        padding: 10px 0;
-    }
-
-    section {
-        padding: 15px;
-        margin: 5px 0;
-    }
-
-    .portfolio-item {
-        margin: 10px 0;
-    }
-
-    form {
-        width: 100%;
-    }
-
-    .image-gallery {
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .image-gallery img {
-        width: 80%;
-    }
-}
-
-@media (max-width: 480px) {
-    .image-gallery img {
-        width: 100%;
-    }
-
-    header h1 {
-        font-size: 1.5rem;
-    }
-
-    .portfolio-item {
-        margin: 8px 0;
-    }
-}
-
 /* Experience Section */
 #experience .resume-item {
     margin-bottom: 15px;
@@ -349,3 +297,89 @@ footer p {
 html {
     scroll-behavior: smooth;
 }
+
+/* Media Queries for Tablets (Medium Screens) */
+@media (max-width: 1024px) {
+    #about {
+        flex-direction: column;
+        padding: 40px 20px;
+    }
+
+    .about-text, .about-image {
+        flex: 1;
+        text-align: center;
+    }
+
+    .about-text {
+        margin-bottom: 20px;
+    }
+
+    .list-inline {
+        justify-content: center;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+/* Media Queries for Mobile Phones (Small Screens) */
+@media (max-width: 768px) {
+    header nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    header nav ul li a {
+        font-size: 1rem;
+        padding: 10px 0;
+    }
+
+    #about {
+        padding: 20px;
+    }
+
+    .image-gallery img {
+        width: 100%;
+    }
+
+    section {
+        margin: 10px 5px;
+    }
+
+    .portfolio-btn {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        text-align: center;
+        padding: 0;
+    }
+
+    .portfolio-btn {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+
+    .about-image img {
+        max-width: 90%;
+    }
+
+    .image-gallery {
+        flex-direction: column;
+    }
+
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
