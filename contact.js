@@ -32,29 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('name', nameField.value);
             localStorage.setItem('email', emailField.value);
 
-            // Create FormData object to send to Formspree
-            const formData = new FormData(contactForm);
+            // Hide form and show thank you message
+            contactForm.style.display = 'none';
+            thankYouMessage.style.display = 'block';
 
-            // Send data to Formspree using Fetch API
-            fetch(contactForm.action, {
-                method: contactForm.method,
-                body: formData
-            })
-            .then(response => {
-                if (response.ok) {
-                    console.log('Form submitted successfully!');  // Debugging log
-                    contactForm.style.display = 'none';  // Hide form
-                    thankYouMessage.style.display = 'block';  // Show thank you message
-                    contactForm.reset();  // Reset the form after submission
-                } else {
-                    console.error('Form submission failed:', response.statusText);  // Log detailed error
-                    alert('There was an issue with your submission. Please try again.');
-                }
-            })
-            .catch(error => {
-                console.error(error);  // Log any network or other issues
-                alert('There was an issue with your submission. Please try again.');
-            });
+            // Optionally reset form after submission
+            contactForm.reset();
         } else {
             alert('Please fill in all required fields marked with a star.');
         }
