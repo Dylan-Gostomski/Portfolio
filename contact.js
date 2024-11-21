@@ -1,9 +1,10 @@
+// Wait for the DOM to fully load
 document.addEventListener('DOMContentLoaded', () => {
     const nameField = document.getElementById('name');
     const emailField = document.getElementById('email');
-    const contactForm = document.getElementById('contactForm'); // Updated to match your HTML form ID
+    const contactForm = document.getElementById('contactForm');
     const thankYouMessage = document.getElementById('thankYouMessage');
-
+    
     // Auto-fill fields if data exists in localStorage
     nameField.value = localStorage.getItem('name') || '';
     emailField.value = localStorage.getItem('email') || '';
@@ -33,25 +34,29 @@ document.addEventListener('DOMContentLoaded', () => {
             localStorage.setItem('name', nameField.value);
             localStorage.setItem('email', emailField.value);
 
-            // Send form data to Formspree using Fetch API
+            // Create FormData object to send to Formspree
             const formData = new FormData(contactForm);
+
+            // Send data to Formspree using Fetch API
             fetch(contactForm.action, {
                 method: contactForm.method,
-                body: formData,
+                body: formData
             })
             .then(response => {
                 if (response.ok) {
-                    // If successful, hide form and show thank-you message
+                    console.log('Form submitted successfully!');  // Debugging log
+                    // Hide form and show thank-you message
                     contactForm.style.display = 'none';
                     thankYouMessage.style.display = 'block';
                 } else {
+                    console.error('Form submission failed.');  // Debugging log
                     alert('There was an issue with your submission. Please try again.');
                 }
             })
-            .catch(() => {
+            .catch(error => {
+                console.error(error); // Log any network or other issues
                 alert('There was an issue with your submission. Please try again.');
             });
-
         } else {
             alert('Please fill in all required fields marked with a star.');
         }
