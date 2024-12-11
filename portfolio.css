@@ -172,7 +172,7 @@ footer p {
     }
 
     .portfolio-item img {
-        width: 100%;
+        width: 60%;
     }
 }
 
@@ -196,5 +196,8 @@ footer p {
 
     .portfolio-category {
         margin-bottom: 15px;
+    }
+    .portfolio-item img{
+        width: 60%;
     }
 }
